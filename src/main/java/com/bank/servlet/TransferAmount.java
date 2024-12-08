@@ -68,13 +68,13 @@ public class TransferAmount extends HttpServlet {
 				if(c_res&&recv_res)
 				{
 					session.setAttribute("recvacc", t2);
-					session.setAttribute("success","Transaction successfull");
+					req.setAttribute("transfer","Transaction successfull");
 					RequestDispatcher rd=req.getRequestDispatcher("transfer.jsp");
 					rd.forward(req, resp);
 				}
 				else
 				{
-					session.setAttribute("failure","Transaction failed");
+					req.setAttribute("failure","Transaction failed");
 					RequestDispatcher rd=req.getRequestDispatcher("transfer.jsp");
 					rd.forward(req, resp);
 				}
