@@ -87,13 +87,13 @@
         <h1 class="text-center text-primary mb-4">Transfer Amount</h1>
         
         <%-- Display success or error messages --%>
-        <% String success = (String) session.getAttribute("success"); %>
+        <% String success = (String) request.getAttribute("transfer"); %>
         <% if (success != null) { %>
             <div class="alert alert-success" role="alert">
                 <%= success %>
             </div>
         <% session.removeAttribute("success"); } %>
-        <% String failure = (String) session.getAttribute("failure"); %>
+        <% String failure = (String) request.getAttribute("failure"); %>
         <% if (failure != null) { %>
             <div class="alert alert-danger" role="alert">
                 <%= failure %>
